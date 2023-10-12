@@ -20,14 +20,11 @@ function Page() {
   }
 
   if (data) {
-    // console.log(data);
+
     const { attributes } = data.data[0]
-    // console.log(attributes)
+
     return (
       <div>
-        {/* <h1>{attributes.title}</h1>
-        <h1>{attributes.description}</h1>
-        <h1>{attributes.slug}</h1> */}
         {attributes ?
           attributes.blocks && attributes.blocks.map((block, index) => {
             const componentName = block.__component.split(".")[1][0].toUpperCase() + block.__component.split(".")[1].slice(1)

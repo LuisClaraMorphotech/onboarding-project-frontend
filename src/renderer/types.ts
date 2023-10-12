@@ -21,12 +21,12 @@ export type PageContextCustom = {
   Page: Page
   pageProps?: PageProps
   urlPathname: string
-  exports: {
-    documentProps?: {
-      title?: string
-      description?: string
-    }
-  }
+  documentProps?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    titleOnSocials?: string;
+  };
 }
 
 type PageContextServer = PageContextBuiltInServer<Page> & PageContextCustom

@@ -5,25 +5,25 @@ import type { PageContext } from './types'
 import './css/index.css'
 import Footer from "../layouts/Footer"
 import Navbar from "../layouts/Navbar"
+// import { Link } from '../components/Link'
 
 export { PageShell }
 
 function PageShell({ children, pageContext }: { children: React.ReactNode; pageContext: PageContext }) {
+  // console.log(pageContext);
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
         <Layout>
           <Navbar />
-
           <Content>{children}</Content>
-
           <Footer />
-
         </Layout>
       </PageContextProvider>
     </React.StrictMode>
   )
 }
+
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -40,5 +40,3 @@ function Content({ children }: { children: React.ReactNode }) {
     </div>
   )
 }
-
-
