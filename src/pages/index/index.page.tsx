@@ -1,27 +1,15 @@
 export { Page }
-import useFetch from "../../hooks/useFetch"
-import { IDataResponse } from '../../types/types';
-import load from "../../renderer/css/loading.svg"
 import Cta from "../../components/blocks/Cta"
 import Row from "../../components/blocks/Row"
 import Hero from "../../components/blocks/Hero"
 import Pricing from '../../components/blocks/Pricing';
+import { IDataLayoutResponse } from './types';
 
-function Page() {
+function Page({ layout }: { layout: IDataLayoutResponse }) {
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:1337";
+  if (layout) {
 
-  const { loading, error, data } = useFetch<IDataResponse>(`${API_URL}/api/landing-pages`);
-
-  if (loading) return <img className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2" src={load} />
-  
-  if (error) {
-    return <div><h1>Error :( </h1> <p>{error}</p></div>
-  }
-
-  if (data) {
-
-    const { attributes } = data.data[0]
+    const { attributes } = layout.data[0]
 
     return (
       <div>
