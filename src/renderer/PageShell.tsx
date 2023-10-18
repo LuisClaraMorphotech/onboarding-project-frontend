@@ -10,7 +10,6 @@ import Navbar from "../layouts/Navbar"
 export { PageShell }
 
 function PageShell({ children, pageContext }: { children: React.ReactNode; pageContext: PageContext }) {
-  // console.log(pageContext);
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>

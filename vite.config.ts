@@ -3,7 +3,10 @@ import ssr from 'vike/plugin'
 import { UserConfig } from 'vite'
 
 const config: UserConfig = {
-  plugins: [react(), ssr()]
+  plugins: [react(), ssr()],
+  server: {
+    cors: true,
+  },
 }
 
 export default config

@@ -2,7 +2,6 @@ import Card from "../elements/Card";
 import PageNotFound from "../../errors/PageNotFound";
 import { RowBlock } from "../types";
 
-
 const Row = (props: RowBlock) => {
 
     if (props) {

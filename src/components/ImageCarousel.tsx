@@ -46,8 +46,9 @@ interface ImageResponse {
 }
 
 const ImageCarousel = ({ images }: { images: ImageResponse }) => {
+
     const API_URL = import.meta.env.VITE_API_LOCAL_URL || "http://127.0.0.1:1337";
-    
+
     const [selectedImage, setSelectedImage] = useState(images?.data[0]?.attributes?.formats?.thumbnail?.url);
 
     const handlePreviewClick = (url: string | undefined) => {
@@ -61,11 +62,12 @@ const ImageCarousel = ({ images }: { images: ImageResponse }) => {
             <div className="w-1/4 p-2 h-full flex flex-col justify-center items-center overflow-y-auto border-r bg-gray-100">
                 {images.data.map(image => (
                     <img
+                        data-testid="thumbnail-image"
                         key={image.id}
                         src={`${API_URL}${image?.attributes?.formats?.thumbnail?.url}`}
                         alt={image.attributes.name}
                         className={`w-[90%] h-[90%] max-w-auto mx-h-auto cursor-pointer mb-2 p-2 ${selectedImage === image?.attributes?.formats?.thumbnail?.url ? 'border border-gray-500 p-1/2' : ''}`}
-                        onClick={()=>handlePreviewClick(image?.attributes?.formats?.thumbnail?.url)}
+                        onClick={() => handlePreviewClick(image?.attributes?.formats?.thumbnail?.url)}
                     />
                 ))}
             </div>

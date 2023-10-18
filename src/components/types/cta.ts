@@ -1,5 +1,5 @@
 export interface CTAInput {
-    id: number;
+    id?: number;
     placeholder: string;
     label: string;
     inputType: string;

@@ -3,7 +3,6 @@ import { CTABlock } from "../types"
 import PageNotFound from "../../errors/PageNotFound";
 
 const Cta = (props: CTABlock) => {
-    // console.log(props);
 
     if (props) {
         const { heading, description, form } = props;

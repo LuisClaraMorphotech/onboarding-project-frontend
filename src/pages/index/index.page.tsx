@@ -9,10 +9,12 @@ function Page({ layout }: { layout: IDataLayoutResponse }) {
 
   if (layout) {
 
+    // console.log("layout", layout)
+
     const { attributes } = layout.data[0]
 
     return (
-      <div>
+      <div data-testid="main-div-page">
         {attributes ?
           attributes.blocks && attributes.blocks.map((block, index) => {
             const componentName = block.__component.split(".")[1][0].toUpperCase() + block.__component.split(".")[1].slice(1)

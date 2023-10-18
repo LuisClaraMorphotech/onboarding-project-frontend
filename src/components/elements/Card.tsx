@@ -2,7 +2,6 @@ import Image from "../Image";
 import { ICard } from "../types"
 
 const Card = (props:ICard) => {
-//    console.log(props);
    
     const {heading, description, image} = props
 

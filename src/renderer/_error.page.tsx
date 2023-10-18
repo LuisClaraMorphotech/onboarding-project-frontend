@@ -7,7 +7,7 @@ function Page({ is404 }: { is404: boolean }) {
   if (is404) {
     return (
       <>
-       <PageNotFound/>
+       <PageNotFound title={""} text={""} />
       </>
     )
   } else {

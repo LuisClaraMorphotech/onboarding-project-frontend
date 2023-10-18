@@ -6,34 +6,7 @@ import { HeroBlock } from "../types";
 const Hero = (props: HeroBlock) => {
 
     if (props) {
-        // console.log(props);
 
-        // const { heading, text, link: { link, title, type }, image: { data: { attributes: { name, alternativeText, url } } } } = props
-
-        // return (
-        //     <main className="flex flex-col w-full justify-center items-center h-3/4">
-        //         <section className="flex h-full w-full max-lg:flex-col max-lg:justify-center max-lg:items-center">
-        //             <div className="flex flex-col justify-center items-center w-full">
-        //                 {heading && <h1 className="font-bold text-2xl">{heading}</h1>}
-        //                 {text && <p className="text-base">{text}</p>}
-        //                 <div className="p-4 ">
-        //                     {link &&
-        //                         <Link href={link}>
-        //                             <button className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${type}`}>
-        //                                 {title}
-        //                             </button>
-        //                         </Link>}
-        //                 </div>
-        //             </div>
-        //             <div className="flex flex-col justify-center items-center w-full">
-        //                 {props.image &&
-        //                     <img className="w-full h-full"
-        //                         id={name} alt={alternativeText ? alternativeText : name}
-        //                         src={[import.meta.env.VITE_API_URL, url].join('')} />}
-        //             </div>
-        //         </section>
-        //     </main>
-        // )
         const { heading, text, link, image } = props;
 
         const imageUrl = image?.data?.attributes?.url || '';
